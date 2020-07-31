@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/public/moment.min.js"></script>
+    <script>
+        $(function(){
+            $('#photoInput').change(function(){
+                readURL(this);
+            });
+        });
+
+        function readURL(input) {
+            if(input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#photoOutput').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function checkz() {
+            var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
+            var getCheck= RegExp(/^[a-zA-Z0-9]{4,12}$/);
+            var getName= RegExp(/^[가-힣]+$/);
+ 
+            //아이디 공백 확인
+            if($("#id").val() == ""){
+                alert("아이디 입력바람");
+                $("#id").focus();
+                return false;
+            }
+        
+            //이름의 유효성 검사
+            if(!getCheck.test($("#id").val())){
+                alert("형식에 맞게 입력해주세요");
+                $("#id").val("");
+                $("#id").focus();
+                return false;
+            }
+        
+            //비밀번호
+            if(!getCheck.test($("#pw").val())) {
+            alert("형식에 맞춰서 PW를 입력해줘용");
+            $("#pw").val("");
+            $("#pw").focus();
+            return false;
+            }
+            if ($("#id").val()==($("#pw").val())) {
+            alert("비밀번호가 ID와 똑같으면 안!대!");
+            $("#pw").val("");
+            $("#pw").focus();
+            }
+            //이메일 공백 확인
+            if($("#email").val() == ""){
+                alert("이메일을 입력해주세요");
+                $("#email").focus();
+                return false;
+            }
+                
+            //이메일 유효성 검사
+            if(!getMail.test($("#email").val())){
+                alert("이메일형식에 맞게 입력해주세요")
+                $("#email").val("");
+                $("#email").focus();
+                return false;
+            }
+        
+            //이름 유효성
+            if (!getName.test($("#name").val())) {
+                alert("이름 똑띠 쓰세용");
+                $("#name").val("");
+                $("#name").focus();
+                return false;
+            }
+
+        }
+    </script>
+    <style>
+        form {
+            background-color: aqua;
+            width: 400px;
+            height: 500px;
+            margin-left: 40%;
+            margin-top: 5%;
+        }
+        p {
+            height: 40px;
+        }
+        p:last-child {
+            padding-left: 100px;
+        }
+        #photoOutput {
+            padding-left: 230px;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return checkz()" method="post" action="/signupOk" enctype="multipart/form-data">
+        <p><label>아이디 : <input type="text" name="userid" id="id"></label></p>
+        <p><label>비밀번호 : <input type="password" name="userpw" id="pw"></label></p>
+        <p><label>이메일 : <input type="text" name="email" id="email"></label></p>
+        <p><label>이름 : <input type="text" name="name" id="name"></label></p>
+        <p><label>사진 : <input type="file" name="photo" id="photoInput"></label></p>
+        <p><img src="" id="photoOutput" width="200"></p>
+        <p><input type="submit" value="회원가입" id="zzz"></p>
+    </form>
+</body>
+</html>

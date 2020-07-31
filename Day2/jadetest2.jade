@@ -1,0 +1,20 @@
+html
+    head
+        meta(charset="UTF-8")
+        title Jade Test
+    body
+        #header
+            h1 My name is Apple
+        hr
+        #header2
+            h3 #{name}
+            h4= desc
+        hr
+        .article
+            a(href="https://www.daum.net") go to daum
+        hr
+        .for
+            -for(let i=0; i<10; i++){
+                p
+                    a(href="http://localhost:3000/#{i}") go to My Site #{i}
+            -}

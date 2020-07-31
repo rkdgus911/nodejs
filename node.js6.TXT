@@ -1,0 +1,32 @@
+。multer 모듈
+일반적인 파일 업로드를 위한 익스플레스를 사용하는 미들웨어입니다.
+
+- 파일을 업로드할 폴더를 만듭니다.
+- multer의 diskStorage메소드에 아래 설정을 작성합니다.
+destination : 저장될 폴더를 설정합니다.
+filename : 저장될 파일이름을 설정합니다.
+
+multer() : 생성자에 diskStorage 설정과 파일크기를 설정합니다.
+
+。로보몽고
+https://robomongo.org/download
+
+Moment.js 시간관련
+https://momentjs.com/
+
+Q.문제
+
+아이디 : [ apple	]
+이메일 : [ apple@apple.com	]
+제목 : [ 안녕하세요 ]
+내용
+[ 내용...	]
+이미지 : [ ...png ]
+    [글쓰기]
+
+아이디 : apple
+이메일 : apple@apple.com
+제목 : 안녕하세요
+내용
+어쩌구 저꺼구
+이미지 : [ ..png ]

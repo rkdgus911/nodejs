@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인란</title>
+    <script>
+        function checkz() {
+            var code = '1234';
+
+            if($("#id").val() == ""){
+                alert("아이디를 넣어주세요");
+                $("#id").focus();
+                return false;
+            }
+            if($("#pw").val() == ""){
+                alert("비밀번호를 넣어주세요");
+                $("#pw").focus();
+                return false;
+            }
+
+            if($("#code").val() == ""){
+                alert("코드를 넣어주세요");
+                $("#code").focus();
+                return false;
+            }
+
+            if($("#code").val() == code){
+                alert("코드가 확인되었습니다.");
+            }
+        }
+    </script>
+    <style>
+    body {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <h2>로그인란</h2>
+    <form onsubmit="return checkz()" method="post" action="/loginOk">
+        <p><label>아이디 : <input type="text" name="userid" id="id"></label></p>
+        <p><label>비밀번호 : <input type="password" name="userpw" id="pw"></label></p>
+        <p><label>로그인 코드 : <input type="text" name="code" id="code"></label></p>
+        <p><input type="submit" value="로그인">&nbsp;&nbsp;&nbsp;<a href="main.html"><input type="button" value="메인으로"></a></p>
+    </form>
+</body>
+</html>

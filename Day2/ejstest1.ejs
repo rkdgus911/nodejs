@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS 테스트</title>
+</head>
+<body>
+    <h2>EJS 테스트</h2>
+    <%
+        let userid = "apple";
+    %>
+    <p>아이디 : <%=userid%></p>
+    <hr>
+    <%
+        for(let i=1; i<=5; i++){
+    %>
+        <p>안녕하세요. EJS 테스트입니다.</p>
+    <%
+        }
+    %>
+</body>
+</html>

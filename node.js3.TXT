@@ -1,0 +1,59 @@
+。Node.js에서 메일보내기
+
+nodemailer 모듈
+Gmail 서버를 이용하여 메일을 보낼 수 있습니다.
+
+host : smpt.gmail.com
+port : 465
+google 계정
+
+보안수준이 낮은 액세스 : 보안 수준이 낮은 앱 허용 -> 사용
+https://myaccount.google.com/lesssecureapps
+
+계정 액세스 사용을 허용
+https://accounts.google.com/DisplayUnlockCaptcha
+
+에러나는 경우
+1. 계정 로그인 실패
+2. 브라우저에서 로그인한 계정과Node.js에서 계정이 다른경우
+3. 코드 맨 아래
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
+문제
+mail.html
+메일보내기
+받는이
+제목
+내용
+
+。정의 모듈
+사용자가 직접 만들어 코드를 관리할 수 있도록 작성하는 모듈입니다.
+1. 
+module.exports = () => {
+	모듈내의 코드
+	...
+	...
+}
+
+2. 
+모듈내의 코드
+...
+...
+module.export = 변수;
+
+제이슨 코드확인
+https://jsonlint.com/
+
+Q. 과제
+
+게시판
+번호 / 제목 / 글쓴이 / 조회수 / 내용 / 날짜 => JSON으로 설계
+
+Node.js API형식으로 만들어서
+insert / update / delete / select
+
+-----------------------------------
+JSP
+
+list.jsp
+JSON파일을 읽어와 리스트로 표현

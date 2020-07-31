@@ -1,0 +1,5 @@
+mongo
+
+use nodedb
+
+db.createCollection('member')
